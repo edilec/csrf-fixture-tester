@@ -1,13 +1,16 @@
 {
   "name": "csrf-fixture-tester",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Run CSRF fixtures against state-changing routes and token handling.",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
+  "bin": { "csrf-fixture-tester": "bin/csrf-fixture-tester.mjs" },
   "scripts": {
-    "test": "node --test"
+    "lint": "node --check src/index.mjs && node --check src/cli.mjs && node --check src/json-keys.mjs && node --check bin/csrf-fixture-tester.mjs",
+    "test": "node --test",
+    "check": "npm run lint && npm test"
   },
   "license": "MIT",
   "repository": {
